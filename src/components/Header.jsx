@@ -15,11 +15,11 @@ const NavItem = ({ item }) => {
     <li className=" relative group">
       {item.type === "link" ? (
         <>
-          <a href="/" className="px-4 py2 ">
+          <a href="/" className="px-4 py2 text-dark-hard">
             {item.name}
           </a>
           <span
-            className="text-blue-500  transition-all suration-500 font-bold absolute right-0 top-0 group-hover:right-[90%] opacity-0 
+            className="text-dark-hard transition-all suration-500 font-bold absolute right-0 top-0 group-hover:right-[90%] opacity-0 
     group-hover:opacity-100"
           >
             /
@@ -27,7 +27,7 @@ const NavItem = ({ item }) => {
         </>
       ) : (
         <>
-        <a href="/" className="px-4 py2 flex flex-row gap-x-1 items-center">
+        <a href="/" className="px-4 py2 flex flex-row gap-x-1 items-center text-dark-hard">
             {item.name}
             <IoIosArrowDown className=""/>
           </a>
@@ -39,7 +39,7 @@ const NavItem = ({ item }) => {
                 item.items.map((page) => (
                     <li>
                     <a href="/" className="hover:bg-dark-hard hover:text-white 
-                    px-4 py-1 transition-all duration-500 rounded-lg text-white lg:text-dark-soft
+                    px-4 py-1 transition-all duration-500 rounded-lg text-white lg:text-dark-hard
                     ">
                         {page}
                     </a>    
@@ -95,8 +95,8 @@ const Header = () => {
             </ul>
             <button
               className="mt-5 lg:mt-0 border-dark-soft border-2 bg-transparent transition-all bg-blue-500 px-6 py-2 
-          text-blue-500 font-semibold rounded-full flex justify-center align-middle hover:bg-white hover:border-2 lg:border-blue-500
-          hover:text-white hover:bg-blue-500 items-center"
+          text-dark-hard font-semibold rounded-full flex justify-center align-middle hover:bg-white hover:border-2 lg:border-dark-hard
+          hover:text-white hover:bg-gray-900 items-center"
             >
               Sign in
             </button>
