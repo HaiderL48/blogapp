@@ -34,7 +34,7 @@ const NavItem = ({ item }) => {
           <div className=" hidden transition-all duration-500 pt-4 absolute
           right-0 bottom-0 transform translate-y-full group-hover:block w-max
           ">
-          <ul className="absolute top-[-20px] left-[-44px] w-40 lg:px-8 lg:py-8 flex flex-col align-middle justify-center items-center gap-5 lg:shadow-lg lg:rounded-lg overflow-hidden">
+          <ul className="lg:absolute lg:top-0 lg:left-[-150px] absolute top-[-20px] left-[-44px] lg:w-48 w-40  lg:px-8 lg:py-8 flex flex-col align-middle justify-center items-center gap-5 lg:shadow-lg lg:rounded-lg overflow-hidden">
           {
                 item.items.map((page) => (
                     <li>
@@ -95,8 +95,8 @@ const Header = () => {
             </ul>
             <button
               className="mt-5 lg:mt-0 border-dark-soft border-2 bg-transparent transition-all bg-blue-500 px-6 py-2 
-          text-white font-semibold rounded-full flex justify-center align-middle hover:bg-white hover:border-2 lg:border-blue-500
-          hover:text-blue-500 items-center"
+          text-blue-500 font-semibold rounded-full flex justify-center align-middle hover:bg-white hover:border-2 lg:border-blue-500
+          hover:text-white hover:bg-blue-500 items-center"
             >
               Sign in
             </button>
