@@ -6,7 +6,19 @@ module.exports = {
 
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        primary: '#58C4DC',
+        dark: {
+          hard :"#283542",
+          soft: '#24ACF2',
+        }
+      },
+      fontFamily : {
+        opensans:["'Open Sans'", "sans-serif"],
+        roboto:["'Roboto Condensed'", "sans-serif"]
+      }
+    },
   },
   plugins: [],
 }

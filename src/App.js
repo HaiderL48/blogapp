@@ -1,10 +1,13 @@
 
 import './App.css';
+import HomePag from './pages/HomePag';
 
 function App() {
   return (
     <>
-      <h1 className='text-red-400 text-2xl font-sans'>Hello World!!!</h1>
+    <div className="App font-opensans">
+      <HomePag />
+      </div>
     </>
   );
 }
