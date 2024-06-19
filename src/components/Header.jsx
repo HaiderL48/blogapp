@@ -15,7 +15,7 @@ const NavItem = ({ item }) => {
     <li className=" relative group">
       {item.type === "link" ? (
         <>
-          <a href="/" className="px-4 py2 text-dark-hard">
+          <a href="/" className="px-4 py2 lg:text-dark-hard">
             {item.name}
           </a>
           <span
@@ -27,7 +27,7 @@ const NavItem = ({ item }) => {
         </>
       ) : (
         <>
-        <a href="/" className="px-4 py2 flex flex-row gap-x-1 items-center text-dark-hard">
+        <a href="/" className="px-4 py2 flex flex-row gap-x-1 items-center lg:text-dark-hard">
             {item.name}
             <IoIosArrowDown className=""/>
           </a>
@@ -95,7 +95,7 @@ const Header = () => {
             </ul>
             <button
               className="mt-5 lg:mt-0 border-dark-soft border-2 bg-transparent transition-all bg-blue-500 px-6 py-2 
-          text-dark-hard font-semibold rounded-full flex justify-center align-middle hover:bg-white hover:border-2 lg:border-dark-hard
+          text-white lg:text-dark-hard font-semibold rounded-full flex justify-center align-middle hover:bg-white hover:border-2 lg:border-dark-hard
           hover:text-white hover:bg-gray-900 items-center"
             >
               Sign in
