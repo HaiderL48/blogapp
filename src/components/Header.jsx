@@ -11,7 +11,15 @@ const nameInfo = [
   { name: "Pricing", type: "link" },
 ];
 const NavItem = ({ item }) => {
-  return (
+
+  const [dropDown, setDropDown] = useState(false)
+
+  const dropDownHandler = () => {
+    setDropDown((curState)=>{
+      return !curState
+    })
+  }
+   return (
     <li className=" relative group">
       {item.type === "link" ? (
         <>
@@ -19,22 +27,22 @@ const NavItem = ({ item }) => {
             {item.name}
           </a>
           <span
-            className="text-dark-hard transition-all suration-500 font-bold absolute right-0 top-0 group-hover:right-[90%] opacity-0 
+            className="cursor-pointer text-dark-hard transition-all suration-500 font-bold absolute right-0 top-0 group-hover:right-[90%] opacity-0 
     group-hover:opacity-100"
           >
             /
           </span>
         </>
       ) : (
-        <>
-        <a href="/" className="px-4 py2 flex flex-row gap-x-1 items-center lg:text-dark-hard">
+        <div className="flex flex-col items-center">
+        <button onClick={dropDownHandler} className="px-4 py2 flex flex-row gap-x-1 items-center lg:text-dark-hard">
             {item.name}
             <IoIosArrowDown className=""/>
-          </a>
-          <div className=" hidden transition-all duration-500 pt-4 absolute
-          right-0 bottom-0 transform translate-y-full group-hover:block w-max
-          ">
-          <ul className="lg:absolute lg:top-0 lg:left-[-150px] absolute top-[-20px] left-[-44px] lg:w-48 w-40  lg:px-8 lg:py-8 flex flex-col align-middle justify-center items-center gap-5 lg:shadow-lg lg:rounded-lg overflow-hidden">
+          </button>
+          <div className={`${dropDown ? "block" : "hidden" } lg:hidden transition-all duration-500 pt-4 lg:absolute
+          lg:right-0 lg:bottom-0 lg:transform lg:translate-y-full lg:group-hover:block lg:w-max`}
+          >
+          <ul className="bg-dark-hard  lg:bg-transparent lg:absolute lg:top-0 lg:left-[-150px]   lg:w-48 w-40  lg:px-8 lg:py-8 flex flex-col align-middle justify-center items-center gap-5 lg:shadow-lg lg:rounded-lg overflow-hidden">
           {
                 item.items.map((page) => (
                     <li>
@@ -49,18 +57,20 @@ const NavItem = ({ item }) => {
           </ul>
 
           </div>
-        </>
+        </div>
       )}
     </li>
   );
 };
 const Header = () => {
   const [visibleNav, setVisibleNav] = useState(false);
+  const [dropdown, setDropdown] = useState(false)
 
   const visibleNavHandler = () => {
     setVisibleNav((curState) => {
       return !curState;
     });
+
   };
   return (
     <>
@@ -96,7 +106,7 @@ const Header = () => {
             <button
               className="mt-5 lg:mt-0 border-dark-soft border-2 bg-transparent transition-all bg-blue-500 px-6 py-2 
           text-white lg:text-dark-hard font-semibold rounded-full flex justify-center align-middle hover:bg-white hover:border-2 lg:border-dark-hard
-          hover:text-white hover:bg-gray-900 items-center"
+          hover:text-gray-900 hover:bg-gray-900 items-center"
             >
               Sign in
             </button>
