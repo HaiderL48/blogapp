@@ -37,7 +37,7 @@ const NavItem = ({ item }) => {
         <div className="flex flex-col items-center">
         <button onClick={dropDownHandler} className="px-4 py2 flex flex-row gap-x-1 items-center lg:text-dark-hard">
             {item.name}
-            <IoIosArrowDown className=""/>
+            <IoIosArrowDown />
           </button>
           <div className={`${dropDown ? "block" : "hidden" } lg:hidden transition-all duration-500 pt-4 lg:absolute
           lg:right-0 lg:bottom-0 lg:transform lg:translate-y-full lg:group-hover:block lg:w-max`}
@@ -45,7 +45,7 @@ const NavItem = ({ item }) => {
           <ul className="bg-dark-hard  lg:bg-transparent lg:absolute lg:top-0 lg:left-[-150px]   lg:w-48 w-40  lg:px-8 lg:py-8 flex flex-col align-middle justify-center items-center gap-5 lg:shadow-lg lg:rounded-lg overflow-hidden">
           {
                 item.items.map((page) => (
-                    <li>
+                    <li key={page}>
                     <a href="/" className="hover:bg-dark-hard hover:text-white 
                     px-4 py-1 transition-all duration-500 rounded-lg text-white lg:text-dark-hard
                     ">
@@ -64,7 +64,6 @@ const NavItem = ({ item }) => {
 };
 const Header = () => {
   const [visibleNav, setVisibleNav] = useState(false);
-  const [dropdown, setDropdown] = useState(false)
 
   const visibleNavHandler = () => {
     setVisibleNav((curState) => {
@@ -75,7 +74,7 @@ const Header = () => {
   return (
     <>
       <section className="lg:m-5 ">
-        <header className="container mx-auto mt-0 px-5 flex justify-between items-center align-middle py-4">
+        <header className=" container mx-auto mt-0 px-5 flex justify-between items-center align-middle py-4">
           <div>
             <img src={images.logo} alt="Logo" className="w-12 lg:w-16 " />
           </div>
@@ -92,11 +91,11 @@ const Header = () => {
           <div
             className={`${
               visibleNav ? "right-0" : "-right-full"
-            }  transition-all duration-500 mt-[100px] lg:mt-0 bg-dark-hard lg:bg-transparent z-[49] fixed top-0 bottom-0 lg:static  flex flex-col justify-center
-           w-full lg:w-auto lg:justify-end
-           lg:flex-row align-middle justify-center gap-x-5 items-center `}
+            }  transition-all duration-500 mt-[80px] lg:mt-0 bg-dark-hard lg:bg-transparent z-[49] fixed top-0 bottom-0 lg:static  flex flex-col justify-center
+            w-full lg:w-auto lg:justify-end
+           lg:flex-row align-middle justify-center gap-x-5 items-center`}
           >
-            <ul className=" mt-[-400px] lg:mt-0 flex items-center flex-col gap-y-5  lg:flex-row gap-x-2 font-semibold text-white lg:text-dark-soft">
+            <ul className=" mt-[-350px] lg:mt-0 flex items-center align-middle justify-center flex-col gap-y-5  lg:flex-row gap-x-2 font-semibold text-white lg:text-dark-soft">
               {nameInfo.map((item) => {
                 return (
                   <NavItem key={item.name} item={item} value={item.name} />

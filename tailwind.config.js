@@ -11,7 +11,7 @@ module.exports = {
         primary: '#58C4DC',
         dark: {
           hard :"#283542",
-          soft: '#24ACF2',
+          soft: '#418FBF',
         }
       },
       fontFamily : {
