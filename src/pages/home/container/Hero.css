@@ -2,7 +2,5 @@
     transition:.3s;
 }
 .search:hover{
-    background-color: white;
-    border: 2px #418FBF solid;
-    color: #418FBF;
+   
 }

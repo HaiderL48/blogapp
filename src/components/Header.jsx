@@ -20,34 +20,34 @@ const NavItem = ({ item }) => {
     })
   }
    return (
-    <li className=" relative group">
+    <li className=" relative group bg-transparent">
       {item.type === "link" ? (
         <>
-          <a href="/" className="px-4 py2 lg:text-dark-hard">
+          <a href="/" className="text-dark-hard px-4 py2 lg:text-dark-hard bg-transparent">
             {item.name}
           </a>
           <span
-            className="cursor-pointer text-dark-hard transition-all suration-500 font-bold absolute right-0 top-0 group-hover:right-[90%] opacity-0 
+            className="cursor-pointer bg-transparent lg:text-dark-hard text-dark-hard transition-all suration-500 font-bold absolute right-0 top-0 group-hover:right-[90%] opacity-0 
     group-hover:opacity-100"
           >
             /
           </span>
         </>
       ) : (
-        <div className="flex flex-col items-center">
-        <button onClick={dropDownHandler} className="px-4 py2 flex flex-row gap-x-1 items-center lg:text-dark-hard">
+        <div className="flex flex-col items-center lg:bg-dark-back bg-dark-back text-black">
+        <button onClick={dropDownHandler} className="bg-transparent text-black px-4 py2 flex flex-row gap-x-1 items-center lg:text-dark-hard">
             {item.name}
-            <IoIosArrowDown />
+            <IoIosArrowDown className="lg:bg-trasparent bg-dark-back "/>
           </button>
-          <div className={`${dropDown ? "block" : "hidden" } lg:hidden transition-all duration-500 pt-4 lg:absolute
+          <div className={`${dropDown ? "block" : "hidden" } bg-dark-back lg:bg-dark-back lg:hidden transition-all duration-500 pt-4 lg:absolute
           lg:right-0 lg:bottom-0 lg:transform lg:translate-y-full lg:group-hover:block lg:w-max`}
           >
-          <ul className="bg-dark-hard  lg:bg-transparent lg:absolute lg:top-0 lg:left-[-150px]   lg:w-48 w-40  lg:px-8 lg:py-8 flex flex-col align-middle justify-center items-center gap-5 lg:shadow-lg lg:rounded-lg overflow-hidden">
+          <ul className="lg:bg-dark-back bg-dark-back text-white  lg:bg-dark-back lg:absolute lg:top-0 lg:left-[-150px]   lg:w-48 w-40  lg:px-8 lg:py-8 flex flex-col align-middle justify-center items-center gap-5 lg:shadow-lg lg:rounded-lg overflow-hidden">
           {
                 item.items.map((page) => (
-                    <li key={page}>
-                    <a href="/" className="hover:bg-dark-hard hover:text-white 
-                    px-4 py-1 transition-all duration-500 rounded-lg text-white lg:text-dark-hard
+                    <li key={page} className="lg:bg-transparent bg-dark-back">
+                    <a href="/" className="hover:bg-dark-button hover:text-white lg:bg-transparent bg-dark-back
+                    px-4 py-1 transition-all duration-500 rounded-lg text-black lg:text-dark-hard
                     ">
                         {page}
                     </a>    
@@ -91,11 +91,12 @@ const Header = () => {
           <div
             className={`${
               visibleNav ? "right-0" : "-right-full"
-            }  transition-all duration-500 mt-[80px] lg:mt-0 bg-dark-hard lg:bg-transparent z-[49] fixed top-0 bottom-0 lg:static  flex flex-col justify-center
+            }  transition-all duration-500 mt-[80px] lg:mt-0 bg-dark-back lg:bg-dark-back z-[49] fixed top-0 bottom-0 lg:static  flex flex-col justify-center
             w-full lg:w-auto lg:justify-end
            lg:flex-row align-middle justify-center gap-x-5 items-center`}
           >
-            <ul className=" mt-[-350px] lg:mt-0 flex items-center align-middle justify-center flex-col gap-y-5  lg:flex-row gap-x-2 font-semibold text-white lg:text-dark-soft">
+            <ul className=" mt-[-350px] lg:mt-0 bg-dark-back lg:bg-transparent
+             flex items-center align-middle justify-center flex-col gap-y-5  lg:flex-row gap-x-2 font-semibold text-dark-text lg:text-dark-text">
               {nameInfo.map((item) => {
                 return (
                   <NavItem key={item.name} item={item} value={item.name} />
@@ -103,9 +104,9 @@ const Header = () => {
               })}
             </ul>
             <button
-              className="mt-5 lg:mt-0 border-dark-soft border-2 bg-transparent transition-all bg-blue-500 px-6 py-2 
-          text-white lg:text-dark-hard font-semibold rounded-full flex justify-center align-middle hover:bg-white hover:border-2 lg:border-dark-hard
-          hover:text-gray-900 hover:bg-gray-900 items-center"
+              className="mt-5 lg:mt-0  transition-all bg-dark-button px-6 py-2 
+          text-black lg:text-dark-hard font-semibold rounded-full flex justify-center align-middle hover:bg-dark-back hover:border-2 border-dark-button lg:border-dark-button
+          hover:text-gray-900 lg:hover:bg-dark-back hover:bg-dark-back items-center"
             >
               Sign in
             </button>
