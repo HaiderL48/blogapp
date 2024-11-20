@@ -1,5 +1,5 @@
 import logo from "../assets/logo.png";
-import hero from "../assets/hero1.jpg"
+import hero from "../assets/hero.png"
 import artic1 from "../assets/artic-1.jpg"
 import artic2 from "../assets/artic-2.jpg"
 const images = {
